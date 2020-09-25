@@ -1,0 +1,32 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>
+    Pseudo
+    <input type="text" formControlName="Pseudo" />
+  </label>
+  <div formGroupName="InformationGame">
+    <h3>Information en jeu</h3>
+    <label>
+      <input type="text" formControlName="GamePlayed" />
+    </label>
+    <br />
+    <label>
+      <input type="text" formControlName="Rank" />
+    </label>
+  </div>
+  <br />
+
+  <label>
+    <input type="number" formControlName="Age" />
+  </label>
+  <br />
+
+  <label>
+    <input type="text" formControlName="Team" />
+  </label>
+  <br />
+  <button type="submit" [disabled]="!profileForm.valid">Inscrit ta mère</button>
+
+  <p>
+    <button (click)="updateProfile()">Update Profile</button>
+  </p>
+</form>
