@@ -1,0 +1,36 @@
+<mat-toolbar [ngStyle]="setMyStyle()">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>LDV ESPORT</h1>
+    <img
+      class="LDVlogo"
+      src="../../assets/img/LDV_Esport_logo_2018-300x175.png"
+    />
+    <span class="menu-spacer"></span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span style="font-size: 12px"
+      >La nouvelle plateforme de tournoi juste pour vous!</span
+    >
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/tournoi'"> Tournoi </a>
+      <a mat-list-item [routerLink]="'/equipe'"> Equipe </a>
+      <a mat-list-item [routerLink]="'/result'"> Mes résultats</a>
+      <a mat-list-item [routerLink]="'/parametre'"> Paramètres </a>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh" [ngStyle]="setMyStyle2()">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
