@@ -1,0 +1,78 @@
+<div class="inscription">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>
+      <h4>Pseudo :</h4>
+      <input
+        type="text"
+        formControlName="Pseudo"
+        placeholder="Pseudo"
+        required
+      />
+    </label>
+    <div formGroupName="GamePlayed">
+      <label>Tes Jeux</label>
+      <button (click)="addGame()">+</button>
+      <div
+        class="input-group"
+        *ngFor="
+          let GameControl of profileForm.get('GamePlayed')['controls'];
+          let i = index
+        "
+      >
+        <input
+          type="text"
+          class="form-control"
+          [formControlName]="i"
+          placeholder="Nom du jeu"
+        />
+      </div>
+    </div>
+    <div formGroupName="Rank">
+      <label>Tes ranks</label>
+      <button (click)="addRank()">+</button>
+      <div
+        class="input-group"
+        *ngFor="
+          let GameControl of profileForm.get('Rank')['controls'];
+          let i = index
+        "
+      >
+        <input
+          type="text"
+          value="rank sur le jeux"
+          class="form-control"
+          [formControlName]="i"
+          placeholder="Rank sur ce jeu"
+        />
+      </div>
+    </div>
+    <label>
+      <h4>Age</h4>
+      <input
+        type="number"
+        formControlName="Age"
+        placeholder="Quelle age as-tu ?"
+        required
+      />
+    </label>
+
+    <label>
+      <h4>Team Esport</h4>
+      <input
+        type="text"
+        formControlName="Team"
+        placeholder="Appartient tu à une team Esport"
+      />
+    </label>
+
+    <label>
+      <h4>Mot de passe</h4>
+      <input
+        type="password"
+        formControlName="Password"
+        placeholder="mot de passe"
+      />
+    </label>
+    <input type="submit" [disabled]="!profileForm.valid" value="Inscris Toi" />
+  </form>
+</div>
