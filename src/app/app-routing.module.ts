@@ -6,14 +6,13 @@ import { BracketComponent } from "./component/bracket/bracket.component";
 import { HomeComponent } from "./component/home/home.component";
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
   { path: "connexion", component: ConnexionComponent },
   { path: "inscription", component: InscriptionComponent },
-  { path: "bracket", component: BracketComponent }
+  { path: "bracket", component: BracketComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

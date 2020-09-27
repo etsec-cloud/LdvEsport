@@ -19,6 +19,7 @@ import { HomeComponent } from "./component/home/home.component";
 import { MatchComponent } from "./component/match/match.component";
 import { NavbarComponent } from "./component/navbar/navbar.component";
 import { TableComponent } from "./component/table/table.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TableComponent } from "./component/table/table.component";
     MatIconModule,
     MatCardModule,
     MatTableModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
