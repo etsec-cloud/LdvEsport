@@ -13,9 +13,12 @@
     >
       <h3 class="tournament-bracket__round-title">Quarterfinals</h3>
       <ul class="tournament-bracket__list">
-        <div *ngFor="let match of matchsList" class="student-item">
-          <app-match></app-match>
-        </div>
+        <app-match></app-match>
+        <app-match></app-match>
+        <app-match></app-match>
+        <app-match></app-match>
+
+        <div *ngFor="let match of matchsList" class="student-item"></div>
       </ul>
     </div>
     <div

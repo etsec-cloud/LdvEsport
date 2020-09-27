@@ -8,7 +8,7 @@ import { Component } from "@angular/core";
 export class BracketComponent {
   matchsList: [];
   generateMatch() {
-    this.matchsList.push("push");
+    this.matchsList.push();
     console.log(this.matchsList);
   }
 }
