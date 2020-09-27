@@ -1,0 +1,58 @@
+.connexion {
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #191919;
+  text-align: center;
+  color: White;
+}
+.connexion h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.connexion input[type="text"],
+.connexion input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.connexion input[type="text"]:focus,
+.connexion input[type="password"]:focus {
+  width: 280px;
+  border-color: #2ecc71;
+}
+.connexion input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.connexion input[type="submit"]:hover {
+  background: #2ecc71;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(91, 72, 175);
+}

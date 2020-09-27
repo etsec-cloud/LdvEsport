@@ -1,29 +1,38 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, FormBuilder } from "@angular/forms";
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormArray,
+  FormControl,
+} from "@angular/forms";
 
 @Component({
   selector: "app-inscription",
   templateUrl: "./inscription.component.html",
   styleUrls: ["./inscription.component.scss"],
 })
-export class InscriptionComponent {
-  profileForm = new FormGroup({
-    Pseudo: new FormControl(""),
-    InformationGame: new FormGroup({
-      GamePlayed: new FormControl([""]),
-      Rank: new FormControl([""]),
-    }),
-    Age: new FormControl(""),
-    Team: new FormControl(""),
-  });
+export class InscriptionComponent implements OnInit {
+  profileForm: FormGroup;
 
-  updateProfile() {
-    this.profileForm.patchValue({
-      firstName: "Nancy",
+  ngOnInit() {
+    this.profileForm = new FormGroup({
+      Pseudo: new FormControl("", Validators.required),
+      GamePlayed: new FormArray([new FormControl("", Validators.required)]),
+      Rank: new FormArray([new FormControl("")]),
+      Age: new FormControl("", Validators.required),
+      Team: new FormControl(""),
+      Password: new FormControl("", Validators.required),
     });
   }
 
-  onSubmit() {
-    console.warn(this.profileForm.value);
+  onSubmit() {}
+  constructor(private fb: FormBuilder) {}
+
+  addGame(): void {
+    (<FormArray>this.profileForm.get("GamePlayed")).push(new FormControl(""));
+  }
+  addRank(): void {
+    (<FormArray>this.profileForm.get("Rank")).push(new FormControl(""));
   }
 }
